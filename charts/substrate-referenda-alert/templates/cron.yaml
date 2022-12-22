@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  schedule: {{ .Values.schedule }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Release.Name }}
+            image: stkdio/substrate-referenda-alert:latest
+            imagePullPolicy: Always
+            env:
+            - name: TZ
+              value: {{ .Values.timezone }}
+            - name: ACCOUNT
+              value: {{ .Values.wallet_address }}
+            - name: WSS_URL
+              value: {{ .Values.WSS_URL }}
+            - name: SLACK_API
+              value: {{ .Values.SLACK_API }}
+            - name: SLACK_CHANNEL_NAME
+              value: {{ .Values.SLACK_CHANNEL_NAME }}
+          restartPolicy: OnFailure

@@ -1,0 +1,8 @@
+
+schedule: "0 12 * * *"
+
+timezone: "UTC"
+wallet_address: "Fq4YmiAq76DntjMKKjMiL98MYszoApUa9idSErvyzfdGoqG"
+WSS_URL: "wss://kusama-rpc.polkadot.io/"
+SLACK_API: ""
+SLACK_CHANNEL_NAME: ""
