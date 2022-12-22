@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  substrate-referenda-alert:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-22T02:13:40.285514043Z"
+    description: Sends an slack notification when a new referenda is avaiable for
+      vote.
+    digest: 3c6c42802a3970926b5cc4ff2647320d0a495c721f64c97f6d437b63e4c1ea58
+    name: substrate-referenda-alert
+    type: application
+    urls:
+    - https://github.com/stkd-io/substrate-referenda-alert/releases/download/substrate-referenda-alert-0.1.0/substrate-referenda-alert-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-22T02:13:40.285549243Z"
