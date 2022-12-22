@@ -22,6 +22,7 @@ helm repo update
 helm install ksm-ref-alert substrate-referenda-alert/substrate-referenda-alert -n ksm-ref-alert --create-namespace -f Values.yaml
 ```
 
+
 Tips: 
-  KSM: Fq4YmiAq76DntjMKKjMiL98MYszoApUa9idSErvyzfdGoqG 
-  DOT: 12pdN2XsNmG2yPAv5QCkq7YYUg1MM3prvGMgusH7S6FnDHAx
+-  KSM: Fq4YmiAq76DntjMKKjMiL98MYszoApUa9idSErvyzfdGoqG 
+-  DOT: 12pdN2XsNmG2yPAv5QCkq7YYUg1MM3prvGMgusH7S6FnDHAx
