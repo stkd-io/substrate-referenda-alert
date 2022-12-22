@@ -22,12 +22,15 @@ def lastRefVoted(account):
     )
     votes_descaled = votes.decode()
     if "Direct" in votes_descaled:
+        print("[DEBUG] Direct Voting")
         dir_votes = votes_descaled['Direct']
         total_votes = dir_votes['votes']
         latest_vote = total_votes[len(total_votes)-1]
+        print("[DEBUG]latest_vote" + str(latest_vote))
         return latest_vote[0]
     #runs if the wallet is Delegating democracy votes
     if "Delegating" in votes_descaled:
+        print("[DEBUG] Delegating Voting")
         get_address = votes_descaled['Delegating']
         delegated_address = get_address['target']
         ACCOUNT = delegated_address
@@ -40,6 +43,7 @@ def lastRefVoted(account):
         dir_votes = votes_descaled['Direct']
         total_votes = dir_votes['votes']
         latest_vote = total_votes[len(total_votes)-1]
+        print("[DEBUG]latest_vote" + str(latest_vote))
         return latest_vote[0]
     else:
         print("Something went horribly wrong! Or you haven't voted or delegated")
