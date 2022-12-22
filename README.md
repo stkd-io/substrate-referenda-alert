@@ -19,5 +19,5 @@ Chart installation:
 ```
 helm repo add substrate-referenda-alert  https://stkd-io.github.io/substrate-referenda-alert/
 helm repo update
-helm install substrate-referenda-alert -n ksm-ref-alert --create-namespace -f Values.yaml
+helm install ksm-ref-alert substrate-referenda-alert/substrate-referenda-alert -n ksm-ref-alert --create-namespace -f Values.yaml
 ```
