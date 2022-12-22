@@ -21,6 +21,7 @@ def lastRefVoted(account):
         params=[account]
     )
     votes_descaled = votes.decode()
+    print("[DEBUG] votes_descaled " + str(votes_descaled))
     if "Direct" in votes_descaled:
         print("[DEBUG] Direct Voting")
         dir_votes = votes_descaled['Direct']
