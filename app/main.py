@@ -7,6 +7,7 @@ ACCOUNT = os.environ['ACCOUNT']
 WSS_URL = os.environ['WSS_URL']
 SLACK_CHANNEL_NAME = os.environ['SLACK_CHANNEL_NAME']
 SLACK_API = os.environ['SLACK_API']
+CHAIN_NAME = os.environ['CHAIN_NAME']
 
 def send_slack_message(api, channel_name, message):
     client = WebClient(api)
@@ -73,7 +74,7 @@ while ref != None:
     )
     if ref != None:
         if index > last_vote:
-            message = "New Referenda: " + str(index)
+            message = "[" + CHAIN_NAME + "]New Referenda: " + str(index)
             print(message)
             send_slack_message(SLACK_API, SLACK_CHANNEL_NAME, message)
         index+=1
