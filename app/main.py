@@ -79,4 +79,4 @@ while ref != None:
             send_slack_message(SLACK_API, SLACK_CHANNEL_NAME, message)
         index+=1
 #remove the last increment from the loop        
-print("Lastest Referendum is: " + str(index-1) )
+print("[" + CHAIN_NAME + "]Lastest Referendum is: " + str(index-1) )
