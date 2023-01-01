@@ -18,8 +18,6 @@ spec:
               value: {{ .Values.timezone }}
             - name: ACCOUNT
               value: {{ .Values.wallet_address }}
-            - name: CHAIN_NAME
-              value: {{ .Values.CHAIN_NAME }}
             - name: WSS_URL
               value: {{ .Values.WSS_URL }}
             - name: SLACK_API

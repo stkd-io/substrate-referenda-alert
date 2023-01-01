@@ -7,7 +7,6 @@ ACCOUNT = os.environ['ACCOUNT']
 WSS_URL = os.environ['WSS_URL']
 SLACK_CHANNEL_NAME = os.environ['SLACK_CHANNEL_NAME']
 SLACK_API = os.environ['SLACK_API']
-CHAIN_NAME = os.environ['CHAIN_NAME']
 
 def send_slack_message(api, channel_name, message):
     client = WebClient(api)
@@ -63,7 +62,7 @@ lowestUnbaked = substrate.query(
 
 index = int(str(lowestUnbaked).encode("utf-8").decode("utf-8"))
 last_vote = lastRefVoted(ACCOUNT)
-print("lastest vote was for a Referendum was: " + str(last_vote) )
+print("[" + WSS_URL + "]lastest vote was for a Referendum was: " + str(last_vote) )
 ref = " "
 
 while ref != None:
@@ -74,9 +73,9 @@ while ref != None:
     )
     if ref != None:
         if index > last_vote:
-            message = "[" + CHAIN_NAME + "]New Referenda: " + str(index)
+            message = "[" + WSS_URL + "]New Referenda: " + str(index)
             print(message)
             send_slack_message(SLACK_API, SLACK_CHANNEL_NAME, message)
         index+=1
 #remove the last increment from the loop        
-print("[" + CHAIN_NAME + "]Lastest Referendum is: " + str(index-1) )
+print("[" + WSS_URL + "]Lastest Referendum is: " + str(index-1) )
